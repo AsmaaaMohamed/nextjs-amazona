@@ -4,6 +4,7 @@ import Stripe from 'stripe'
 import { sendPurchaseReceipt } from '@/emails'
 import Order from '@/lib/db/models/order.model'
 import User from '@/lib/db/models/user.model'
+import { connectToDatabase } from '@/lib/db'
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string)
 
 export async function POST(req: NextRequest) {
@@ -18,6 +19,7 @@ export async function POST(req: NextRequest) {
     const orderId = charge.metadata.orderId
     const email = charge.billing_details.email
     const pricePaidInCents = charge.amount
+    await connectToDatabase()
     const order = await Order.findById(orderId).populate('user', 'email')
     console.log(order)
     if (order == null) {
