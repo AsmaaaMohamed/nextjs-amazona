@@ -19,6 +19,7 @@ export async function POST(req: NextRequest) {
     const email = charge.billing_details.email
     const pricePaidInCents = charge.amount
     const order = await Order.findById(orderId).populate('user', 'email')
+    console.log(order)
     if (order == null) {
       return new NextResponse('Bad Request', { status: 400 })
     }
