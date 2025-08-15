@@ -3,7 +3,7 @@ import Stripe from 'stripe'
 
 import { sendPurchaseReceipt } from '@/emails'
 import Order from '@/lib/db/models/order.model'
-
+import User from '@/models/User'
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string)
 
 export async function POST(req: NextRequest) {
