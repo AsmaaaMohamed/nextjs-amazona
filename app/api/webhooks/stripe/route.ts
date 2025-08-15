@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
     const orderId = charge.metadata.orderId
     const email = charge.billing_details.email
     const pricePaidInCents = charge.amount
-    // await connectToDatabase()
+    await connectToDatabase()
     const order = await Order.findById(orderId).populate('user', 'email')
     console.log(order)
     if (order == null) {
