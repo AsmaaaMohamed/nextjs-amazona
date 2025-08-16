@@ -188,12 +188,12 @@ export async function getMyOrders({
   }
   const skipAmount = (Number(page) - 1) * limit
   const orders = await Order.find({
-    user: new mongoose.Types.ObjectId(session?.user?.id),
+    user: session?.user?.id,
   })
     .sort({ createdAt: 'desc' })
     .skip(skipAmount)
     .limit(limit)
-  console.log('aaaaaaaaaaaaaaaallllllllllllll' , orders)
+  console.log('actualID' , session?.user?.id)
   const ordersCount = await Order.countDocuments({ user: session?.user?.id })
 
   return {
