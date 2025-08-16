@@ -9,6 +9,7 @@ import Order, { IOrder } from '../db/models/order.model'
 import { paypal } from '../paypal'
 import { sendPurchaseReceipt } from '@/emails'
 import { revalidatePath } from 'next/cache'
+import mongoose from 'mongoose'
 
 // CREATE
 export const createOrder = async (clientSideCart: Cart) => {
@@ -189,7 +190,7 @@ export async function getMyOrders({
   const allOrders = await Order.find()
   console.log('ooooooooooooooooorrrrrrrrrrrr' , allOrders)
   const orders = await Order.find({
-    user: session?.user?.id,
+    user: new mongoose.Types.ObjectId(session?.user?.id),
   })
     .sort({ createdAt: 'desc' })
     .skip(skipAmount)
