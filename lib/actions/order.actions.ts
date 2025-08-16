@@ -192,6 +192,7 @@ export async function getMyOrders({
     .sort({ createdAt: 'desc' })
     .skip(skipAmount)
     .limit(limit)
+  console.log('aaaaaaaaaaaaaaaallllllllllllll' , orders)
   const ordersCount = await Order.countDocuments({ user: session?.user?.id })
 
   return {
