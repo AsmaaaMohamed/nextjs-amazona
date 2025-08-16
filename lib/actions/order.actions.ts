@@ -187,8 +187,6 @@ export async function getMyOrders({
     throw new Error('User is not authenticated')
   }
   const skipAmount = (Number(page) - 1) * limit
-  const allOrders = await Order.find()
-  console.log('ooooooooooooooooorrrrrrrrrrrr' , allOrders)
   const orders = await Order.find({
     user: new mongoose.Types.ObjectId(session?.user?.id),
   })
