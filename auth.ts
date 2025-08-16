@@ -7,6 +7,7 @@ import User from './lib/db/models/user.model'
 import Google from 'next-auth/providers/google'
 import NextAuth, { type DefaultSession } from 'next-auth'
 import authConfig from './auth.config'
+import { findOrCreateUser } from './lib/user-service'
 
 declare module 'next-auth' {
   // eslint-disable-next-line no-unused-vars
@@ -65,18 +66,26 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     }),
   ],
   callbacks: {
-    jwt: async ({ token, user, trigger, session }) => {
-      if (user) {
-        if (!user.name) {
-          await connectToDatabase()
-          await User.findByIdAndUpdate(user.id, {
-            name: user.name || user.email!.split('@')[0],
-            role: 'user',
-          })
+    jwt: async ({ token, profile,account, trigger, session }) => {
+      if (account && profile) {
+        const user = await findOrCreateUser(profile);
+
+        // store mongo _id in token
+        token.id = user._id.toString();
+        if (user) {
+          if (!user.name) {
+            await connectToDatabase()
+            await User.findByIdAndUpdate(user.id, {
+              name: user.name || user.email!.split('@')[0],
+              role: 'user',
+            })
+          }
+          console.log('iddddddddddddddddddddddddddddd', token.id)
+          token.name = user.name || user.email!.split('@')[0]
+          token.role = (user as { role: string }).role
         }
-        token.name = user.name || user.email!.split('@')[0]
-        token.role = (user as { role: string }).role
       }
+      
 
       if (session?.user?.name && trigger === 'update') {
         token.name = session.user.name
