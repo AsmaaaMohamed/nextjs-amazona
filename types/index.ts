@@ -3,6 +3,7 @@ import {
   OrderInputSchema,
   OrderItemSchema,
   ProductInputSchema,
+  ProductUpdateSchema,
   ReviewInputSchema,
   ShippingAddressSchema,
   UserInputSchema,
@@ -21,7 +22,7 @@ export type IReviewDetails = IReviewInput & {
   }
 }
 export type IProductInput = z.infer<typeof ProductInputSchema>
-
+export type IProductInputWithID = z.infer<typeof ProductUpdateSchema>
 export type Data = {
   users: IUserInput[]
   products: IProductInput[]
