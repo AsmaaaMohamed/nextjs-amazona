@@ -2,6 +2,7 @@ import type { NextAuthConfig } from 'next-auth'
 
 // Notice this is only an object, not a full Auth.js instance
 export default {
+  
   providers: [],
   callbacks: {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -16,4 +17,5 @@ export default {
       return true
     },
   },
+  
 } satisfies NextAuthConfig
