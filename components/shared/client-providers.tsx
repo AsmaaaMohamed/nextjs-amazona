@@ -4,18 +4,23 @@ import useCartSidebar from '@/hooks/use-cart-sidebar'
 import CartSidebar from './cart-sidebar'
 import { Toaster } from 'sonner'
 import { ThemeProvider } from './theme-provider'
+import AppInitializer from './app-initializer'
+import { ClientSetting } from '@/types'
 
 export default function ClientProviders({
+  setting,
   children,
 }: {
+  setting:ClientSetting
   children: React.ReactNode
 }) {
-  const isCartSidebarOpen = useCartSidebar()
+  const visible = useCartSidebar()
 
   return (
     <>
+    <AppInitializer setting={setting}>
       <ThemeProvider attribute='class' defaultTheme='system'>
-        {isCartSidebarOpen ? (
+        {visible ? (
           <div className='flex min-h-screen'>
             <div className='flex-1 overflow-hidden'>{children}</div>
             <CartSidebar />
@@ -25,6 +30,7 @@ export default function ClientProviders({
         )}
         <Toaster />
       </ThemeProvider>
+      </AppInitializer>
     </>
   )
 }
