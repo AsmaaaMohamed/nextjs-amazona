@@ -13,7 +13,6 @@ import {
   generateId,
   round2,
 } from '../utils'
-import WebPage from './models/web-page.model'
 import Setting from './models/setting.model'
 import { OrderItem, IOrderInput, ShippingAddress } from '@/types'
 
@@ -21,7 +20,7 @@ loadEnvConfig(cwd())
 
 const main = async () => {
   try {
-    const { users, products, reviews, webPages, settings } = data
+    const { users, products, reviews, settings } = data
     await connectToDatabase(process.env.MONGODB_URI)
 
     await User.deleteMany()
@@ -29,9 +28,6 @@ const main = async () => {
 
     await Setting.deleteMany()
     const createdSetting = await Setting.insertMany(settings)
-
-    await WebPage.deleteMany()
-    await WebPage.insertMany(webPages)
 
     await Product.deleteMany()
     const createdProducts = await Product.insertMany(
