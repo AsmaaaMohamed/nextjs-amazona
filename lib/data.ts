@@ -1067,34 +1067,42 @@ const reviews = [
 const data = {
   headerMenus: [
     {
+      id:1,
       name: "Today's Deal",
       href: '/search?tag=todays-deal',
     },
     {
+      id:2,
       name: 'New Arrivals',
       href: '/search?tag=new-arrival',
     },
     {
+      id:3,
       name: 'Featured Products',
       href: '/search?tag=featured',
     },
     {
+      id:4,
       name: 'Best Sellers',
       href: '/search?tag=best-seller',
     },
     {
+      id:5,
       name: 'Browsing History',
       href: '/',
     },
     {
+      id:6,
       name: 'Customer Service',
       href: '/',
     },
     {
+      id:7,
       name: 'About Us',
       href: '/',
     },
     {
+      id:8,
       name: 'Help',
       href: '/',
     },
