@@ -1084,19 +1084,19 @@ const data = {
     },
     {
       name: 'Browsing History',
-      href: '/#browsing-history',
+      href: '/',
     },
     {
       name: 'Customer Service',
-      href: '/page/customer-service',
+      href: '/',
     },
     {
       name: 'About Us',
-      href: '/page/about-us',
+      href: '/',
     },
     {
       name: 'Help',
-      href: '/page/help',
+      href: '/',
     },
   ],
   carousels: [

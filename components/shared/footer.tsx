@@ -39,13 +39,13 @@ export default function Footer() {
             <h3 className='font-bold mb-2'>{t('Footer.Get to Know Us')}</h3>
             <ul className='space-y-2'>
               <li>
-                <Link href='/page/careers'>{t('Footer.Careers')}</Link>
+                <Link href='/'>{t('Footer.Careers')}</Link>
               </li>
               <li>
-                <Link href='/page/blog'>{t('Footer.Blog')}</Link>
+                <Link href='/'>{t('Footer.Blog')}</Link>
               </li>
               <li>
-                <Link href='/page/about-us'>
+                <Link href='/'>
                   {t('Footer.About name', { name: site.name })}
                 </Link>
               </li>
@@ -55,17 +55,17 @@ export default function Footer() {
             <h3 className='font-bold mb-2'>{t('Footer.Make Money with Us')}</h3>
             <ul className='space-y-2'>
               <li>
-                <Link href='/page/sell'>
+                <Link href='/'>
                   {t('Footer.Sell products on', { name: site.name })}
                 </Link>
               </li>
               <li>
-                <Link href='/page/become-affiliate'>
+                <Link href='/'>
                   {t('Footer.Become an Affiliate')}
                 </Link>
               </li>
               <li>
-                <Link href='/page/advertise'>
+                <Link href='/'>
                   {t('Footer.Advertise Your Products')}
                 </Link>
               </li>
@@ -75,17 +75,17 @@ export default function Footer() {
             <h3 className='font-bold mb-2'>{t('Footer.Let Us Help You')}</h3>
             <ul className='space-y-2'>
               <li>
-                <Link href='/page/shipping'>
+                <Link href='/'>
                   {t('Footer.Shipping Rates & Policies')}
                 </Link>
               </li>
               <li>
-                <Link href='/page/returns-policy'>
+                <Link href='/'>
                   {t('Footer.Returns & Replacements')}
                 </Link>
               </li>
               <li>
-                <Link href='/page/help'>{t('Footer.Help')}</Link>
+                <Link href='/'>{t('Footer.Help')}</Link>
               </li>
             </ul>
           </div>
