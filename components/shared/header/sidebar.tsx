@@ -103,7 +103,7 @@ export default async function Sidebar({
               </Link>
             </DrawerClose>{' '}
             <DrawerClose asChild>
-              <Link href='/page/customer-service' className='item-button'>
+              <Link href='/' className='item-button'>
                 {t('Header.Customer Service')}
               </Link>
             </DrawerClose>

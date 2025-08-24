@@ -153,11 +153,11 @@ export default function Footer() {
       </div>
       <div className='p-4'>
         <div className='flex justify-center  gap-3 text-sm'>
-          <Link href='/page/conditions-of-use'>
+          <Link href='/'>
             {t('Footer.Conditions of Use')}
           </Link>
-          <Link href='/page/privacy-policy'>{t('Footer.Privacy Notice')}</Link>
-          <Link href='/page/help'>{t('Footer.Help')}</Link>
+          <Link href='/'>{t('Footer.Privacy Notice')}</Link>
+          <Link href='/'>{t('Footer.Help')}</Link>
         </div>
         <div className='flex justify-center text-sm'>
           <p> © {site.copyright}</p>

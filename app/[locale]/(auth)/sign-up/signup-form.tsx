@@ -146,8 +146,8 @@ export default function SignUpForm() {
           </div>
           <div className='text-sm'>
             By creating an account, you agree to {site.name}&apos;s{' '}
-            <Link href='/page/conditions-of-use'>Conditions of Use</Link> and{' '}
-            <Link href='/page/privacy-policy'> Privacy Notice. </Link>
+            <Link href='/'>Conditions of Use</Link> and{' '}
+            <Link href='/'> Privacy Notice. </Link>
           </div>
           <Separator className='mb-4' />
           <div className='text-sm'>
