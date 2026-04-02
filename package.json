@@ -65,7 +65,6 @@
     "@paypal/react-paypal-js": "^8.8.3",
     "@react-email/components": "^0.5.0",
     "@tailwindcss/postcss": "^4",
-    "@types/bcryptjs": "^3.0.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
