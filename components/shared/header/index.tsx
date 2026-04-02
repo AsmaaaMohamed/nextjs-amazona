@@ -46,7 +46,7 @@ export default async function Header() {
           {data.headerMenus.map((menu) => (
             <Link
               href={menu.href}
-              key={menu.href}
+              key={menu.id}
               className='header-button !p-2 '
             >
               {t('Header.' + menu.name)}

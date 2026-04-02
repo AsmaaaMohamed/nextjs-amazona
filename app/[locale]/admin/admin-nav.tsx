@@ -24,10 +24,6 @@ const links = [
     href: '/admin/users',
   },
   {
-    title: 'Pages',
-    href: '/admin/web-pages',
-  },
-  {
     title: 'Settings',
     href: '/admin/settings',
   },

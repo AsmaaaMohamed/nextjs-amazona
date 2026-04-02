@@ -105,8 +105,8 @@ export default function CredentialsSignInForm() {
           </div>
           <div className='text-sm'>
             By signing in, you agree to {site.name}&apos;s{' '}
-            <Link href='/page/conditions-of-use'>Conditions of Use</Link> and{' '}
-            <Link href='/page/privacy-policy'>Privacy Notice.</Link>
+            <Link href='/'>Conditions of Use</Link> and{' '}
+            <Link href='/'>Privacy Notice.</Link>
           </div>
         </div>
       </form>

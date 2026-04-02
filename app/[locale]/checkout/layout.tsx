@@ -28,7 +28,7 @@ export default function CheckoutLayout({
             <h1 className='text-3xl'>Checkout</h1>
           </div>
           <div>
-            <Link href='/page/help'>
+            <Link href='/'>
               <HelpCircle className='w-6 h-6' />
             </Link>
           </div>
